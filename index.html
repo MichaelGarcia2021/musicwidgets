@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<title>Music Now</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
+iframe {width: 300px; height: 400px;}
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: right;
+  width: 33.33%;
+  padding: 10px;
+  height: 500px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h2 {text-align: center;}
+
+h4 {text-align: center;
+  border: dotted salmon;
+
+}
+
+</style>
+
+
+<body class="w3-light-grey">
+
+<!-- Navigation bar with social media icons -->
+<div class="w3-bar w3-black w3-hide-small">
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-facebook-official"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a>
+</div>
+  
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-xxxlarge"><b>MUSIC NOW</b></h1>
+    <h6>Trending music and news <span class="w3-tag">Todays Hits</span></h6>
+  </header>
+
+  <!-- Image header -->
+  <header class="w3-display-container w3-wide" id="home">
+    <img class="w3-image" src="https://media2.giphy.com/media/iM72vvi46IEia8srPe/giphy.gif?cid=ecf05e4746eggfiyxci3s6ec8hajz6yitdpq5fvofk9co43d&rid=giphy.gif&ct=g" alt="Fashion Blog" width="1500" height="60">
+    <div class="w3-display-left w3-padding-large">
+      <h1 class="w3-text-white">Music News</h1>
+      <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>Now</b></h1>
+      <h6><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">SUBSCRIBE</button></h6>
+    </div>
+  </header>
+  <h4>Todays Top Playlists</h4>
+  <div class="row">
+    <div class="column" style="background-color:#aaa;">
+        <h2>Top USA</h2>
+      <h2><iframe src="https://open.spotify.com/embed/playlist/37i9dQZEVXbLp5XoPON0wI?utm_source=generator" width="100%" height="350" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></h2>
+    
+    </div>
+    <div class="column" style="background-color:#bbb;">
+        <h2>Top Country</h2>
+      <h2><iframe src="https://open.spotify.com/embed/playlist/7d85RPHimZb0gR4PlY3IKq?utm_source=generator" width="100%" height="350" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </h2>
+     
+    </div>
+    <div class="column" style="background-color:#ccc;">
+        <h2>Top HipHop</h2>
+      <h2><iframe src="https://open.spotify.com/embed/playlist/3PP4DLeNOFKlK0QwI5P7rf?utm_source=generator" width="100%" height="350" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </h2>
+    
+    </div>
+  </div>
+  <script>
+
+  var axios = require("axios").default;
+
+  var options = {
+    method: 'GET',
+    url: 'https://mourits-lyrics.p.rapidapi.com/cacheCount',
+    headers: {
+      'x-rapidapi-host': 'mourits-lyrics.p.rapidapi.com',
+      'x-rapidapi-key': 'b41909fd6dmshdb0e9ea0f16228cp132253jsnf40aa6c3f22a'
+    }
+  };
+  
+  axios.request(options).then(function (response) {
+      console.log(response.data);
+  }).catch(function (error) {
+      console.error(error);
+  });
+  </script>
+  
+
+<br>
+          <h3>Music Facts You Need To Know</h3>
+   
+
+        <div class="twitter-timeline">
+            <a class="twitter-timeline" data-lang="en" data-width="900" data-height="350" data-dnt="true" data-theme="dark" href="https://twitter.com/MusicFactsFun?ref_src=twsrc%5Etfw">Tweets by MusicFactsFun</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
+          <p></p>
+          <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+            <hr>
+           
+
+    
+    <!-- END About/Intro Menu -->
+    </div>
+
+  <!-- END GRID -->
+  </div>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Subscribe Modal -->
+<div id="subscribe" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-white">
+      <i onclick="document.getElementById('subscribe').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+      <h2 class="w3-wide">SUBSCRIBE</h2>
+      <p>Join my mailing list to receive updates on the latest blog posts and other things.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey" style="padding:32px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <p>Powered by <a href="index.html" target="_blank">Music Now</a></p>
+</footer>
+
+<script>
+// Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click();
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function likeFunction(x) {
+  x.style.fontWeight = "bold";
+  x.innerHTML = "✓ Liked";
+}
+</script>
+
+</body>
+</html>
